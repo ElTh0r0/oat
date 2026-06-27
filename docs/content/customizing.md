@@ -7,7 +7,7 @@ Pretty much all properties of Oat are defined as CSS variables that can be overr
 
 ## Picking and choosing
 
-While it is quite okay to bundle all of Oat given how tiny it is (CSS %KB, JS %KB), it is possible to include components selectively.
+While it is quite okay to bundle all of Oat given how tiny it is, it is possible to include components selectively.
 
 ##### Must include
 - `00-base.css`
