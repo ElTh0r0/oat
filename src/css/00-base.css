@@ -179,8 +179,8 @@
     outline-offset: 2px;
   }
 
-  :disabled {
-    opacity: 0.5;
+  :disabled, [aria-disabled] {
+    color: var(--muted-foreground);
     cursor: not-allowed;
   }
 }

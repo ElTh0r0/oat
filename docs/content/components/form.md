@@ -43,9 +43,10 @@ Form elements are styled automatically. Wrap inputs in `<label>` for proper asso
     <textarea placeholder="Your message..."></textarea>
   </label>
 
-  <label data-field>
+  <label data-field aria-disabled>
     Disabled
     <input type="text" placeholder="Disabled" disabled />
+    <span data-hint>This is a hint</span>
   </label>
 
   <label data-field>
