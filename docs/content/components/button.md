@@ -14,6 +14,8 @@ The `<button>` element is styled by default. Use `data-variant="secondary|danger
 <button class="outline">Outline</button>
 <button data-variant="danger" class="outline">Danger</button>
 <button class="ghost">Ghost</button>
+<button class="outline" disabled>Disabled</button>
+<button data-variant="danger" disabled>Disabled</button>
 <button disabled>Disabled</button>
 ```
 {% end %}
