@@ -1,6 +1,6 @@
 @layer components {
   ot-dropdown {
-    [popover] {
+    [popover]:not(.ot-tooltip) {
       position: fixed;
       margin: 0;
       /* padding: var(--space-1); */
