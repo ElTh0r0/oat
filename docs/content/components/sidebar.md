@@ -41,7 +41,7 @@ description = "Responsive admin dashboard layout with sticky sidebar, optional t
 {% </demo> %}
 </div>
 
-### Always-collapsible
+#### Always-collapsible
 
 Set `data-sidebar-layout="always"` to keep the toggle visible and make it collapse the sidebar on all screen sizes.
 
@@ -51,7 +51,7 @@ Set `data-sidebar-layout="always"` to keep the toggle visible and make it collap
 </body>
 ```
 
-### With top sticky nav
+#### With top sticky nav
 
 Add `data-topnav` to a `<nav>` or `<header>` element for a full-width sticky top bar. The sidebar will adjust to sit below it. Inspect the HTML source of this website for a live example.
 

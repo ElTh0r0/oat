@@ -2,8 +2,6 @@
 title = "Installation and usage"
 +++
 
-> **IMPORTANT:** The lib is currently sub v1 and is likely to have breaking changes until it hits v1.
-
 ### CDN
 
 Include the CSS and JS files directly in your HTML:

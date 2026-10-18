@@ -28,7 +28,7 @@ Fully semantic, zero-Javascript, dynamic dialog with `<dialog>`. Use `commandfor
 ```
 {% </demo> %}
 
-### With form fields
+#### With form fields
 
 Forms inside dialogs work naturally. Use `command="close"` on cancel buttons to close.
 
@@ -53,7 +53,7 @@ Forms inside dialogs work naturally. Use `command="close"` on cancel buttons to 
 ```
 {% </demo> %}
 
-### Handling return value
+#### Handling return value
 
 Listen to the native `close` event to get the button value:
 

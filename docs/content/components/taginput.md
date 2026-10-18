@@ -21,7 +21,7 @@ Use `<ot-taginput>`. Type a word and press <kbd>Enter</kbd> or <kbd>,</kbd> (com
 ```
 {% </demo> %}
 
-### Autocomplete
+#### Autocomplete
 
 Give the `<input>` a `list` and a `<datalist>`, then populate the datalist from the input's native `oninput` and `onfocus` handler. Selecting a suggestion creates a tag.
 
@@ -65,7 +65,7 @@ function tagInputAutoComplete(el) {
 </script>
 ```
 
-### Programmatic read and write
+#### Programmatic read and write
 
 Mutate the `value` property of the component. A standard `input` event is dispatched (and bubbles) whenever a tag is added or removed.
 
@@ -86,7 +86,7 @@ Mutate the `value` property of the component. A standard `input` event is dispat
 </script>
 ```
 
-### Options
+#### Options
 
 | Property      | Description                                                             |
 | ------------- | ----------------------------------------------------------------------- |

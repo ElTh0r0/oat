@@ -13,7 +13,7 @@ Use `.skeleton` with `role="status"` for loading placeholders. Add `.line` for t
 ```
 {% </demo> %}
 
-### Skeleton card 
+#### Skeleton card 
 
 Put skeleton loader inside `<article>` to get a card layout.
 

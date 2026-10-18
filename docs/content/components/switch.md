@@ -17,7 +17,7 @@ Add `role="switch"` to a checkbox for toggle switch styling.
 ```
 {% </demo> %}
 
-### Disabled
+#### Disabled
 
 {% <demo> %}
 ```html

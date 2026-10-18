@@ -26,7 +26,7 @@ Use `<figure data-variant="avatar">` with an `<img>` tag to create an avatar. Ca
 ```
 {% </demo> %}
 
-### Avatar group
+#### Avatar group
 
 Wrap avatars in `<figure data-variant="avatar" role="group">` for grouped avatars. To control the size of all avatars in the group, add `.small` or `.large` to the group container.
 

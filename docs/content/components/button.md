@@ -20,7 +20,7 @@ The `<button>` element is styled by default. Use `data-variant="secondary|danger
 ```
 {% </demo> %}
 
-### Sizes
+#### Sizes
 
 Use `.small` or `.large` for size variants.
 
@@ -33,7 +33,7 @@ Use `.small` or `.large` for size variants.
 ```
 {% </demo> %}
 
-### Button group
+#### Button group
 
 Wrap buttons in `<menu class="buttons">` for connected buttons.
 

@@ -95,7 +95,7 @@ Form elements are styled automatically. Wrap inputs in `<label>` for proper asso
 {% </demo> %}
 
 
-### Input group
+#### Input group
 
 Use `.group` on a `<fieldset>` to combine inputs with buttons or labels.
 
@@ -126,7 +126,7 @@ Use `.group` on a `<fieldset>` to combine inputs with buttons or labels.
 ```
 {% </demo> %}
 
-### Validation error
+#### Validation error
 
 Use `aria-invalid="true"` on field containers to reveal and style error messages.
 

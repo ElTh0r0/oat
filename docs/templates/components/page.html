@@ -3,6 +3,8 @@
 {% block title %}{{ page.title }} - {{ config.title }}{% endblock %}
 
 {% block content %}
-<h1>{{ page.title }}</h1>
-{{ page.content | safe }}
+<section id="{{ page.slug }}" class="demo-section card card-float">
+  <h1 class="card-title">{{ page.title }}</h1>
+  {{ page.content | safe }}
+</section>
 {% endblock %}

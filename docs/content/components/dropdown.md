@@ -32,7 +32,7 @@ Wrap in `<ot-dropdown>`. Use `popovertarget` on the trigger and `popover` on the
 ```
 {% </demo> %}
 
-### Popover
+#### Popover
 
 `<ot-dropdown>` can also be used to show popover dropdown elements.
 

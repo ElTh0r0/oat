@@ -5,73 +5,227 @@
 {% block content %}
 <section class="intro">
   <p class="logo">
-    <a href="/"><img src="/logo.svg" alt="{{ config.title }}"></a>
+    <a href="/" aria-label="{{ config.title }}">{{ load_data(path="static/logo.svg", format="plain") | safe }}</a>
   </p>
 
   <h1 class="title">Ultra-lightweight UI library</h1>
-  <h3 class="slogan text-light">Semantic, minimal, zero dependencies. ~10KB CSS and JS.</h3>
+  <h3 class="slogan text-light">Semantic, minimal, and zero-dependencies, with just 10KB of CSS and JS.</h3>
 
-  <p>
-    Oat is an ultra-lightweight HTML + CSS, semantic UI component library with zero dependencies.
-    No framework, build, or dev complexity. Just include the tiny CSS and JS files and you are good to go building
-    decent looking web applications with most commonly needed components and elements.
-  </p>
-  <p>
-    Semantic tags and attributes are styled contextually out of the box without classes, forcing best practices, and reducing
-    markup class pollution. A few dynamic components are WebComponents and use minimal JavaScript.
-  </p>
-  <br />
   <div class="hstack">
-    <a href="/components/" class="button">Browse components</a>
-    <a href="/usage/" class="button outline">Get started</a>
+    <a href="/components/" class="button large">Browse components</a>
+    <a href="/usage/" class="button large outline">Get started</a>
+  </div>
+</section>
+
+<!-- Every panel below is plain semantic HTML styled by Oat, with no extra classes. -->
+<section class="showcase" aria-label="Live component examples">
+  <div>
+    <article class="card">
+      <header>
+        <h4>Sign up</h4>
+        <p class="text-light">Feel free to start. Or stop.</p>
+      </header>
+      <form onsubmit="event.preventDefault(); ot.toast('We sent a confirmation link to your email.', 'Almost there', { variant: 'success' })">
+        <label data-field>
+          Full name
+          <input type="text" placeholder="Your name" />
+        </label>
+        <label data-field>
+          Work email
+          <input type="email" placeholder="you@company.com" />
+        </label>
+        <label data-field>
+          Password
+          <input type="password" placeholder="••••••••" aria-describedby="pw-hint" />
+          <small id="pw-hint" data-hint>8 or more characters, with a number.</small>
+        </label>
+        <label data-field>
+          <input type="checkbox" checked /> I accept the Terms
+        </label>
+        <button type="submit" class="w-100">Sign up</button>
+      </form>
+    </article>
+
+    <article class="card">
+      <header class="hstack justify-between">
+        <h4>Disk usage</h4>
+        <span class="badge" data-variant="warning">82%</span>
+      </header>
+      <p class="stat"><strong>8.2 GB</strong> <span class="text-light">of 10 GB</span></p>
+      <progress value="82" max="100"></progress>
+      <ul class="unstyled usage">
+        <li><span>Database backups</span> <span class="text-light">5.1 GB</span></li>
+        <li><span>Uploads</span> <span class="text-light">2.4 GB</span></li>
+        <li><span>Logs</span> <span class="text-light">0.7 GB</span></li>
+      </ul>
+    </article>
+  </div>
+
+  <div>
+    <article class="card">
+      <header>
+        <h4>Notify me</h4>
+        <p class="text-light">You can change this later</p>
+      </header>
+      <ul class="unstyled toggles">
+        <li>
+          <label>
+            <span><strong>Someone replies</strong><small class="text-light">To a thread you're in.</small></span>
+            <input type="checkbox" role="switch" checked />
+          </label>
+        </li>
+        <li>
+          <label>
+            <span><strong>A deploy fails</strong><small class="text-light">Sent right away, weekends included.</small></span>
+            <input type="checkbox" role="switch" />
+          </label>
+        </li>
+        <li>
+          <label>
+            <span><strong>An invoice is ready</strong><small class="text-light">On the 1st of every month.</small></span>
+            <input type="checkbox" role="switch" checked />
+          </label>
+        </li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <ot-tabs>
+        <div role="tablist">
+          <button role="tab">Profile</button>
+          <button role="tab">Security</button>
+        </div>
+        <div role="tabpanel">
+          <label data-field>
+            Username
+            <input type="text" value="foobar" />
+          </label>
+          <button class="small" onclick="ot.toast('Your profile has been updated.', 'Saved')">Save changes</button>
+        </div>
+        <div role="tabpanel">
+          <label data-field>
+            New password
+            <input type="password" value="correcthorse" />
+          </label>
+          <button class="small" onclick="ot.toast('You\'ll be signed out of other devices.', 'Password changed')">Change password</button>
+        </div>
+      </ot-tabs>
+    </article>
+
+    <article class="card">
+      <details>
+        <summary>Do I need npm?</summary>
+        <p>Nope. Just drop in a <code>&lt;link&gt;</code> and a <code>&lt;script&gt;</code> tag.</p>
+      </details>
+      <details>
+        <summary>What if JavaScript is off?</summary>
+        <p>Most things will work. Tabs, dropdowns and toasts need it.</p>
+      </details>
+    </article>
+  </div>
+
+  <div>
+    <article class="card">
+      <header class="hstack justify-between">
+        <h4>Members <small class="text-light">3 of 5 users</small></h4>
+        <button class="small outline" onclick="ot.toast('Anyone with the link can join until Friday.', 'Invite link copied')">Invite</button>
+      </header>
+      <ul class="unstyled people">
+        <li>
+          <figure data-variant="avatar" class="small" aria-label="John Doe"><abbr title="John Doe">PR</abbr></figure>
+          <span><strong>John Doe</strong><small class="text-light">jdoe@example.com</small></span>
+          <span class="badge" data-variant="secondary">Admin</span>
+        </li>
+        <li>
+          <figure data-variant="avatar" class="small" aria-label="Jane Doe"><abbr title="Jane Doe">TB</abbr></figure>
+          <span><strong>Jane Doe</strong><small class="text-light">jadoe@example.com</small></span>
+          <span class="badge outline">Member</span>
+        </li>
+        <li>
+          <figure data-variant="avatar" class="small" aria-label="Foo Bar"><img src="/avatar.svg" alt="" /></figure>
+          <span><strong>Foo Bar</strong><small class="text-light">foo@example.com</small></span>
+          <span class="badge outline">Billing</span>
+        </li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <header>
+        <h4>app</h4>
+        <p class="text-light">Last deployed 2 days ago. <code>main</code> has 3 new commits.</p>
+      </header>
+      <div class="hstack">
+        <button commandfor="home-deploy" command="show-modal">Deploy now</button>
+        <button class="outline" title="Runs the build without publishing">Dry run</button>
+      </div>
+      <dialog id="home-deploy" closedby="any">
+        <form method="dialog">
+          <header>
+            <h3>Deploy 3 commits to production?</h3>
+            <p>Fix rate limiter off-by-one, bump pgx to v5.7, and 1 more.</p>
+          </header>
+          <footer>
+            <button type="button" commandfor="home-deploy" command="close" class="outline">Cancel</button>
+            <button value="deploy" onclick="ot.toast('Build #1848 is rolling out.', 'Deploying', { variant: 'success' })">Deploy</button>
+          </footer>
+        </form>
+      </dialog>
+    </article>
+
+    <article class="card">
+      <header>
+        <h4>Invoices</h4>
+      </header>
+      <div class="table">
+        <table>
+          <tbody>
+            <tr><td>Bandwidth</td><td><span class="badge" data-variant="success">Paid</span></td><td class="align-right">$1,200.00</td></tr>
+            <tr><td>CPU</td><td><span class="badge" data-variant="warning">Due Oct 24</span></td><td class="align-right">$340.00</td></tr>
+            <tr><td>Memory</td><td><span class="badge" data-variant="danger">Card declined</span></td><td class="align-right">$89.50</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </article>
   </div>
 </section>
 
 <section class="features">
-  <article class="card">
-    <header>
-      <h3>Light like an oat flake</h3>
-    </header>
-    <p><strong>7KB</strong> CSS, <strong>2.9KB</strong> JS, minified + gzipped.</p>
-    <p>That's it.</p>
-  </article>
+  <div>
+    <h3>Light like an oat flake</h3>
+    <p><strong>7KB</strong> CSS, <strong>2.9KB</strong> JS, minified + gzipped. That's it.</p>
+  </div>
 
-  <article class="card">
-    <header>
-      <h3>Zero dependencies</h3>
-    </header>
+  <div>
+    <h3>Zero dependencies</h3>
     <p>Fully-standalone with no dependencies on any JS or CSS frameworks or libraries.
       No Node.js ecosystem garbage or bloat.
     </p>
-  </article>
+  </div>
 
-  <article class="card">
-    <header>
-      <h3>Semantic HTML</h3>
-    </header>
+  <div>
+    <h3>Semantic HTML</h3>
     <p>Native elements like <code>&lt;button&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;dialog&gt;</code> and
       semantic attributes like <code>role="button"</code> are styled directly. No classes.</p>
-  </article>
+  </div>
 
-  <article class="card">
-    <header>
-      <h3>Accessibility</h3>
-    </header>
+  <div>
+    <h3>Accessibility</h3>
     <p>Semantic HTML and ARIA roles are used (and forced in many places) throughout.
       Proper keyboard navigation support for all components and elements.</p>
-  </article>
+  </div>
 
-  <article class="card">
-    <header>
-      <h3>Easy customization</h3>
-    </header>
+  <div>
+    <h3>Easy customization</h3>
     <p>Easily customize the overall theme by overriding a handful of CSS variables. Automatically picks up dark theme based on system preferences.</p>
-  </article>
+  </div>
+
+  <div>
+    <h3>For the long term</h3>
+    <p>Plain, simple, standards-based CSS and JS. Take it over and change it whenever.</p>
+  </div>
 </section>
 
-<br />
-
-<section>
+<section class="why">
   <h2>Why?</h2>
   <p>
     This was made after the unending frustration with the over-engineered bloat, complexity, and dependency-hell of pretty much every Javascript UI library and framework out there. Done with the continuous PTSD of rug-pulls and lockins of the Node.js ecosystem trash.

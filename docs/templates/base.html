@@ -38,7 +38,7 @@
         </button>
 
         <a href="/" class="favicon"><img src="/favicon.svg" alt="{{ config.title }}" /></a>
-        <a href="/" class="logo"><img src="/logo.svg" alt="{{ config.title }}" /></a>
+        <a href="/" class="logo" aria-label="{{ config.title }}">{{ load_data(path="static/logo.svg", format="plain") | safe }}</a>
       </div>
 
       <div class="col-8 justify-end hstack">
@@ -120,7 +120,8 @@
     <div class="container">
       {% block content %}{% endblock %}
 
-      <footer class="footer text-light">&copy; <a href="https://nadh.in"><small class="text-light">Kailash Nadh</small></a></footer>
+      <footer class="footer text-light"><a href="https://nadh.in"><small class="text-light">Kailash Nadh</small></a></footer>
+      <br />
     </div>
   </main>
 </body>

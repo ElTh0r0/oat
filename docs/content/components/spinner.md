@@ -17,7 +17,7 @@ Use `aria-busy="true"` on any element to show a loading indicator. Size with `da
 ```
 {% </demo> %}
 
-### Overlay
+#### Overlay
 Adding `data-spinner="overlay"` dims contents of the container and overlays the spinner on top.
 
 {% <demo> %}

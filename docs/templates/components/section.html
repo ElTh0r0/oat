@@ -16,10 +16,10 @@
 <hr style="margin: var(--space-12) 0;" />
 
 {% for page in section.pages %}
-<section id="{{ page.slug }}" class="demo-section">
-  <h2># {{ page.title }}</h2>
-  {{ page.content | safe }}
+<section id="{{ page.slug }}" class="demo-section card card-float">
+  <h3 class="card-title">{{ page.title }}</h3>
   <a href="{{ page.permalink }}" class="section-permalink" aria-label="Permalink to {{ page.title }} doc">Link</a>
+  {{ page.content | safe }}
 </section>
 {% endfor %}
 {% endblock %}
