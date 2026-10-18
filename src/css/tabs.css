@@ -21,7 +21,7 @@
     border: none;
     border-radius: calc(var(--radius-medium) - 2px);
     cursor: pointer;
-    transition: background-color var(--transition-fast), color var(--transition-fast);
+    transition: background-color var(--transition), color var(--transition-fast), box-shadow var(--transition);
 
     &:hover {
       color: var(--muted-foreground);
@@ -41,7 +41,7 @@
     }
 
     &:not([hidden]) {
-      animation: fade-in-up 0.3s both;
+      animation: fade-in-up 0.4s cubic-bezier(0.32, 0.72, 0, 1) both;
     }
   }
 }

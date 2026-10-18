@@ -1,6 +1,6 @@
 @layer base {
   :is(button, [type=submit], [type=reset], [type=button], a.button), ::file-selector-button {
-    --_hov: color-mix(in srgb, var(--primary), white 25%);
+    --_hov: color-mix(in srgb, var(--primary), var(--background) 20%);
 
     display: inline-flex;
     align-items: center;
@@ -17,8 +17,8 @@
     color: var(--primary-foreground);
     border-radius: var(--radius-medium);
     border: 1px solid;
-    border-color: rgb(255 255 255 / 0.15) rgb(0 0 0 / 0.2) rgb(0 0 0 / 0.2) rgb(255 255 255 / 0.15);
-    transition: background-color var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast);
+    border-color: rgb(255 255 255 / 0.12) rgb(0 0 0 / 0.08) rgb(0 0 0 / 0.16);
+    transition: background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast);
 
     &:not(:disabled) {
       cursor: pointer;
@@ -33,10 +33,12 @@
     }
 
     &[data-variant="secondary"] {
-      --_hov: color-mix(in srgb, var(--secondary), black 10%);
+      --_hov: color-mix(in srgb, var(--secondary), var(--secondary-foreground) 6%);
       background-color: var(--secondary);
       color: var(--secondary-foreground);
-      border-color: rgb(255 255 255 / 0.5) rgb(0 0 0 / 0.1) rgb(0 0 0 / 0.1) rgb(255 255 255 / 0.5);
+      border-color: color-mix(in srgb, var(--secondary), var(--secondary-foreground) 7%);
+      border-right-color: rgb(0 0 0 / 0.1);
+      border-bottom-color: rgb(0 0 0 / 0.1);
     }
 
     &[data-variant="danger"] {
