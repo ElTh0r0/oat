@@ -55,7 +55,11 @@ nav[data-topnav] {
     svg {
       opacity: 0.8;
     }
+  }
 
+  .logo svg {
+    max-height: 24px;
+    width: auto;
   }
 
   a, button {
